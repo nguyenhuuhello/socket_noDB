@@ -6,8 +6,12 @@ const http = require('http')
 const server = http.createServer(app)
 
 //Sử dụng socket.io
-const{Server} = require('socket.io')
-const io = new Server(server)
+// const{Server} = require('socket.io')
+// const io = new Server(server)
+const io = require('socket.io')(server, {
+    transport: ['polling'],
+    timeout: 3000
+});
 
 //tạo đường dẫn web trả về
 app.get('/', (req, res) => {
