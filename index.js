@@ -43,6 +43,6 @@ io.on('connection', (socket) => {
 
 })
 
-server.listen(443, () => {
+server.listen(8080, () => {
     console.log('Listenning on port 4200')
 })
