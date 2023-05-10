@@ -35,8 +35,14 @@ io.on('connection', (socket) => {
         io.emit('on-btn', led)
     });
 
+    socket.on('event_name', message => {
+        console.log(message);
+
+        io.emit('user-chat', message)
+    });
+
 })
 
-server.listen(3000, () => {
+server.listen(4200, () => {
     console.log('Listenning on port 3000')
 })
